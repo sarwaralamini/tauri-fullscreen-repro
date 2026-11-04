@@ -1,0 +1,16 @@
+[package]
+name = "tauri-fullscreen-repro"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "=2.7.4", features = [] }
+
+[dependencies]
+tauri = { version = "=2.12.5", features = [] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+# Pin the native window and WebView stack used by the affected app.
+tauri-runtime-wry = "=2.12.3"
+tao = "=0.37.2"
+wry = "=0.57.1"
